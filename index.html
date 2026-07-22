@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FBF4E8; color: #33241A; font-family: 'Karla', sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #C4552E; text-decoration: none; }
+  a:hover { color: #9E3F1E; }
+  ::selection { background: #E8A33C; color: #33241A; }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: #FBF4E8; overflow-x: hidden;">
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav data-screen-label="Nav" style="display: flex; align-items: center; justify-content: space-between; padding: 22px 48px; max-width: 1440px; margin: 0 auto; box-sizing: border-box;">
+    <div style="display: flex; align-items: baseline; gap: 10px;">
+      <span style="font-family: 'Young Serif', serif; font-size: 26px; color: #33241A; letter-spacing: -0.5px;">Wildsong</span>
+      <span style="font-family: 'Caveat', cursive; font-size: 19px; color: #C4552E; transform: rotate(-3deg); display: inline-block;">sing wild, sing true</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 32px; font-size: 15.5px; font-weight: 600; color: #5C4634;">
+      <a href="#offerings" style="color: #5C4634;" style-hover="color: #C4552E;">Offerings</a>
+      <a href="#event" style="color: #5C4634;" style-hover="color: #C4552E;">Upcoming</a>
+      <a href="#songbook" style="color: #5C4634;" style-hover="color: #C4552E;">Songbook Portal</a>
+      <a href="#event" style="background: #C4552E; color: #FBF4E8; padding: 11px 22px; border-radius: 999px; font-weight: 700; transition: background 0.2s;" style-hover="background: #9E3F1E; color: #FBF4E8;">Join a circle</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <header data-screen-label="Hero" style="max-width: 1440px; margin: 0 auto; padding: 56px 48px 96px; box-sizing: border-box; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center;">
+    <div>
+      <p style="margin: 0 0 20px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; font-size: 13px; color: #C4552E;">Song circles · Cacao · Retreats</p>
+      <h1 style="margin: 0; font-family: 'Young Serif', serif; font-size: clamp(48px, 5.6vw, 78px); line-height: 1.04; color: #33241A; letter-spacing: -1.5px; text-wrap: pretty;">Remember how good it feels to <span style="color: #C4552E;">sing together</span></h1>
+      <p style="margin: 28px 0 0; font-size: 19px; line-height: 1.65; color: #5C4634; max-width: 520px; text-wrap: pretty;">Wildsong is a space for profound connection and co-creation — consistent containers to find your own unique sound, open the heart, and celebrate the beautiful gift of life and music.</p>
+      <div style="display: flex; align-items: center; gap: 18px; margin-top: 36px;">
+        <a href="#event" style="background: #C4552E; color: #FBF4E8; padding: 16px 32px; border-radius: 999px; font-weight: 700; font-size: 17px; box-shadow: 0 6px 18px rgba(196,85,46,0.32); transition: transform 0.15s, background 0.2s;" style-hover="background: #9E3F1E; color: #FBF4E8; transform: translateY(-2px);">Join the next gathering</a>
+        <a href="#offerings" style="color: #33241A; font-weight: 700; font-size: 17px; border-bottom: 2px solid #E8A33C; padding-bottom: 2px;" style-hover="color: #C4552E;">Explore offerings ↓</a>
+      </div>
+      <div style="margin-top: 44px;">{{ waveSvg }}</div>
+    </div>
+    <div style="position: relative;">
+      <div style="position: relative; width: 100%; aspect-ratio: 4 / 4.6;">
+        <image-slot id="hero-main" shape="rounded" radius="28" placeholder="Drop a photo of a song circle" src="https://unsplash.com/photos/qRq0eoSCj-Q/download?force=true&amp;w=1600" credit="Photo by Vitaly Gariev on Unsplash" credit-href="https://unsplash.com/@silverkblack" style="display: block; width: 100%; height: 100%; border: 6px solid #F0DEC0; box-sizing: border-box; border-radius: 200px 200px 28px 28px; overflow: hidden;"></image-slot>
+      </div>
+      <div style="position: absolute; top: -14px; right: -10px; background: #E8A33C; color: #33241A; font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; padding: 12px 20px; border-radius: 999px; transform: rotate(6deg); box-shadow: 0 4px 12px rgba(51,36,26,0.15);">all voices welcome ♪</div>
+      <div style="position: absolute; bottom: 26px; left: -26px; background: #FBF4E8; border: 2px solid #E9D8BB; border-radius: 18px; padding: 14px 20px; box-shadow: 0 8px 24px rgba(51,36,26,0.12); display: flex; align-items: center; gap: 12px;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background: #4A6B4E; color: #FBF4E8; display: grid; place-items: center; font-size: 20px; flex: none;">♫</div>
+        <div>
+          <div style="font-weight: 700; font-size: 15px; color: #33241A;">No experience needed</div>
+          <div style="font-size: 13.5px; color: #8A6F58;">Just bring your voice, exactly as it is</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════ WORD STRIP ═══════════ -->
+  <div style="background: #33241A; color: #F0DEC0; padding: 18px 0; transform: rotate(-1.2deg) scale(1.02); font-family: 'Young Serif', serif; font-size: 20px; overflow: hidden; white-space: nowrap;">
+    <div style="display: flex; gap: 40px; justify-content: center;">
+      <span>inclusive</span><span style="color: #E8A33C;">✳</span><span>joyful</span><span style="color: #E8A33C;">✳</span><span>uplifting</span><span style="color: #E8A33C;">✳</span><span>heart-opening</span><span style="color: #E8A33C;">✳</span><span>wild</span><span style="color: #E8A33C;">✳</span><span>engaging</span><span style="color: #E8A33C;">✳</span><span>devotional</span><span style="color: #E8A33C;">✳</span><span>alive</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ WHAT IS WILDSONG ═══════════ -->
+  <section data-screen-label="About" style="max-width: 900px; margin: 0 auto; padding: 120px 48px 100px; box-sizing: border-box; text-align: center;">
+    <span style="font-family: 'Caveat', cursive; font-size: 26px; color: #C4552E;">what is Wildsong?</span>
+    <h2 style="margin: 16px 0 0; font-family: 'Young Serif', serif; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.25; color: #33241A; letter-spacing: -0.5px; text-wrap: pretty;">A living invitation to access your own unique sound — through the vibration of music, in the company of open hearts.</h2>
+    <p style="margin: 26px auto 0; font-size: 18px; line-height: 1.7; color: #5C4634; max-width: 640px; text-wrap: pretty;">Every gathering is a container for authentic expression: collaborative devotional singing, warm cacao, gentle guitar, and weekends away in nature. Come as you are — leave a little more yourself.</p>
+  </section>
+
+  <!-- ═══════════ UPCOMING EVENT ═══════════ -->
+  <section id="event" data-screen-label="Upcoming event" style="max-width: 1240px; margin: 0 auto; padding: 0 48px 120px; box-sizing: border-box;">
+    <div style="background: #4A6B4E; border-radius: 32px; padding: 56px; display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: center; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -60px; right: 300px; width: 220px; height: 220px; border-radius: 50%; border: 2px dashed rgba(240,222,192,0.25);"></div>
+      <div style="position: relative;">
+        <div style="display: inline-flex; align-items: center; gap: 10px; background: #E8A33C; color: #33241A; font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 8px 16px; border-radius: 999px;">Next up · Enliven Festival</div>
+        <h2 style="margin: 22px 0 0; font-family: 'Young Serif', serif; font-size: clamp(34px, 3.6vw, 50px); line-height: 1.12; color: #FBF4E8; letter-spacing: -0.5px; text-wrap: pretty;">Joyful Singalong: Songs of Celebration &amp; Play</h2>
+        <p style="margin: 20px 0 0; font-size: 17.5px; line-height: 1.65; color: rgba(251,244,232,0.85); max-width: 480px; text-wrap: pretty;">An all-voices-welcome singalong of playful, celebratory songs — easy to learn, impossible not to smile through.</p>
+        <div style="display: flex; align-items: center; gap: 14px; margin-top: 26px;">
+          <div style="display: flex;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: #E8A33C; border: 3px solid #4A6B4E; display: grid; place-items: center; font-family: 'Young Serif', serif; font-size: 18px; color: #33241A;">C</div>
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: #C4552E; border: 3px solid #4A6B4E; display: grid; place-items: center; font-family: 'Young Serif', serif; font-size: 18px; color: #FBF4E8; margin-left: -14px;">R</div>
+          </div>
+          <div style="color: #FBF4E8;">
+            <div style="font-weight: 700; font-size: 15.5px;">Facilitated by Cammy Cakes + Sweet Rosie</div>
+            <div style="font-size: 13.5px; color: rgba(251,244,232,0.7);">Wildsong facilitators</div>
+          </div>
+        </div>
+        <a href="#" style="display: inline-block; margin-top: 32px; background: #FBF4E8; color: #33241A; padding: 15px 30px; border-radius: 999px; font-weight: 700; font-size: 16.5px; transition: transform 0.15s;" style-hover="transform: translateY(-2px); color: #C4552E;">Register for the singalong →</a>
+      </div>
+      <div style="position: relative; height: 380px;">
+        <image-slot id="event-photo" shape="rounded" radius="24" placeholder="Drop a festival / singalong photo" src="https://unsplash.com/photos/M46Z1FXmD-c/download?force=true&amp;w=1600" credit="Photo by Jo Jo on Unsplash" credit-href="https://unsplash.com/@hanness" style="display: block; width: 100%; height: 100%;"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ OFFERINGS ═══════════ -->
+  <section id="offerings" data-screen-label="Offerings" style="max-width: 1240px; margin: 0 auto; padding: 0 48px 130px; box-sizing: border-box;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 48px; flex-wrap: wrap;">
+      <div>
+        <span style="font-family: 'Caveat', cursive; font-size: 26px; color: #C4552E;">ways to sing with us</span>
+        <h2 style="margin: 10px 0 0; font-family: 'Young Serif', serif; font-size: clamp(34px, 3.6vw, 50px); color: #33241A; letter-spacing: -0.5px;">The offerings</h2>
+      </div>
+      <p style="margin: 0; max-width: 380px; font-size: 16px; line-height: 1.6; color: #8A6F58; text-wrap: pretty;">Consistent containers, held with care. Pick the doorway that calls you — they all lead to the same warm room.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <sc-for list="{{ offerings }}" as="off" hint-placeholder-count="6">
+        <div style="background: #FFFDF8; border: 2px solid #EEDFC6; border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 14px; transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;" style-hover="transform: translateY(-4px); box-shadow: 0 14px 32px rgba(51,36,26,0.1); border-color: #E8A33C;">
+          <div style="width: 54px; height: 54px; border-radius: 16px; background: {{ off.bg }}; color: {{ off.fg }}; display: grid; place-items: center; font-size: 24px;">{{ off.glyph }}</div>
+          <h3 style="margin: 6px 0 0; font-family: 'Young Serif', serif; font-size: 22px; color: #33241A;">{{ off.name }}</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #5C4634; text-wrap: pretty;">{{ off.desc }}</p>
+          <span style="margin-top: auto; font-weight: 700; font-size: 14.5px; color: #C4552E;">{{ off.cta }} →</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ═══════════ HOW IT FEELS ═══════════ -->
+  <section data-screen-label="How it feels" style="background: #F3E7D2; padding: 110px 48px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 420px 1fr; gap: 72px; align-items: center;">
+      <div style="position: relative; height: 480px;">
+        <image-slot id="feels-photo" shape="rounded" radius="28" placeholder="Drop a photo — hands, fire, voices" src="https://unsplash.com/photos/lFIRRdeyNIM/download?force=true&amp;w=1600" credit="Photo by Vitaly Gariev on Unsplash" credit-href="https://unsplash.com/@silverkblack" style="display: block; width: 100%; height: 100%; border-radius: 200px 28px 200px 28px; overflow: hidden;"></image-slot>
+        <div style="position: absolute; bottom: -16px; right: -16px; background: #C4552E; color: #FBF4E8; font-family: 'Caveat', cursive; font-size: 22px; padding: 12px 22px; border-radius: 999px; transform: rotate(-4deg);">cacao warm in hand ☕</div>
+      </div>
+      <div>
+        <span style="font-family: 'Caveat', cursive; font-size: 26px; color: #C4552E;">how it feels</span>
+        <h2 style="margin: 14px 0 0; font-family: 'Young Serif', serif; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.2; color: #33241A; letter-spacing: -0.5px; text-wrap: pretty;">A circle forms. A note rises. Suddenly, forty strangers are one voice.</h2>
+        <div style="display: flex; flex-direction: column; gap: 22px; margin-top: 36px;">
+          <sc-for list="{{ moments }}" as="m" hint-placeholder-count="3">
+            <div style="display: flex; gap: 18px; align-items: flex-start;">
+              <div style="width: 40px; height: 40px; border-radius: 50%; background: #FBF4E8; border: 2px solid #E8A33C; display: grid; place-items: center; font-family: 'Young Serif', serif; font-size: 16px; color: #C4552E; flex: none;">{{ m.n }}</div>
+              <div>
+                <div style="font-weight: 700; font-size: 17px; color: #33241A;">{{ m.title }}</div>
+                <p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.6; color: #5C4634; text-wrap: pretty;">{{ m.desc }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SONGBOOK PORTAL ═══════════ -->
+  <section id="songbook" data-screen-label="Songbook portal" style="max-width: 1240px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;">
+      <div>
+        <span style="font-family: 'Caveat', cursive; font-size: 26px; color: #C4552E;">keep singing at home</span>
+        <h2 style="margin: 14px 0 0; font-family: 'Young Serif', serif; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.2; color: #33241A; letter-spacing: -0.5px;">The Songbook Portal</h2>
+        <p style="margin: 22px 0 0; font-size: 17.5px; line-height: 1.65; color: #5C4634; max-width: 480px; text-wrap: pretty;">Every song from circle, in your pocket. Lyrics, chords, and gentle video modules so the music follows you home — and you arrive at the next gathering already humming.</p>
+        <a href="#" style="display: inline-block; margin-top: 30px; background: #33241A; color: #FBF4E8; padding: 15px 30px; border-radius: 999px; font-weight: 700; font-size: 16.5px; transition: background 0.2s;" style-hover="background: #C4552E; color: #FBF4E8;">Enter the portal</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <sc-for list="{{ songs }}" as="s" hint-placeholder-count="3">
+          <div style="background: #FFFDF8; border: 2px solid #EEDFC6; border-radius: 18px; padding: 18px 22px; display: flex; align-items: center; gap: 18px; transition: border-color 0.18s, transform 0.18s;" style-hover="border-color: #E8A33C; transform: translateX(6px);">
+            <div style="width: 46px; height: 46px; border-radius: 50%; background: {{ s.bg }}; color: #FBF4E8; display: grid; place-items: center; font-size: 18px; flex: none;">▶</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 700; font-size: 16px; color: #33241A;">{{ s.title }}</div>
+              <div style="font-size: 13.5px; color: #8A6F58;">{{ s.meta }}</div>
+            </div>
+            <span style="font-family: 'Caveat', cursive; font-size: 19px; color: #C4552E;">{{ s.tag }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ MANGOSINGALONG TEASER ═══════════ -->
+  <sc-if value="{{ showMangoTeaser }}" hint-placeholder-val="{{ true }}">
+    <section data-screen-label="Mangosingalong teaser" style="max-width: 1240px; margin: 0 auto; padding: 0 48px 130px; box-sizing: border-box;">
+      <div style="background: linear-gradient(135deg, #E8A33C 0%, #E07B39 100%); border-radius: 32px; padding: 52px 56px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; bottom: -80px; left: -40px; width: 240px; height: 240px; border-radius: 50%; background: rgba(251,244,232,0.14);"></div>
+        <div style="position: relative;">
+          <span style="font-family: 'Caveat', cursive; font-size: 26px; color: #33241A;">for the little wild ones (5–16)</span>
+          <h2 style="margin: 10px 0 0; font-family: 'Young Serif', serif; font-size: clamp(30px, 3vw, 42px); color: #33241A; letter-spacing: -0.5px;">Meet Mangosingalong 🥭</h2>
+          <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.65; color: #4A3520; max-width: 520px; text-wrap: pretty;">Wildsong's sister world for youth — camps, family singalong days, birthday parties, and mentorship where kids roam freely in their exuberant expression.</p>
+          <a href="#" style="display: inline-block; margin-top: 26px; background: #33241A; color: #FBF4E8; padding: 14px 28px; border-radius: 999px; font-weight: 700; font-size: 16px; transition: transform 0.15s;" style-hover="transform: translateY(-2px); color: #E8A33C;">Visit Mangosingalong →</a>
+        </div>
+        <div style="position: relative; height: 260px;">
+          <image-slot id="mango-photo" shape="rounded" radius="130" placeholder="Drop a photo of kids singing" src="https://unsplash.com/photos/tvc5imO5pXk/download?force=true&amp;w=1600" credit="Photo by Robert Collins on Unsplash" credit-href="https://unsplash.com/@robbie36" style="display: block; width: 100%; height: 100%;"></image-slot>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- ═══════════ FINAL CTA + FOOTER ═══════════ -->
+  <footer data-screen-label="Footer" style="background: #33241A; color: #F0DEC0; padding: 110px 48px 48px; border-radius: 48px 48px 0 0;">
+    <div style="max-width: 1240px; margin: 0 auto; text-align: center;">
+      <span style="font-family: 'Caveat', cursive; font-size: 28px; color: #E8A33C;">your voice is already enough</span>
+      <h2 style="margin: 18px auto 0; font-family: 'Young Serif', serif; font-size: clamp(40px, 4.6vw, 64px); line-height: 1.1; color: #FBF4E8; letter-spacing: -1px; max-width: 800px; text-wrap: pretty;">Come sing with us.</h2>
+      <div style="display: flex; justify-content: center; gap: 18px; margin-top: 40px;">
+        <a href="#event" style="background: #C4552E; color: #FBF4E8; padding: 17px 36px; border-radius: 999px; font-weight: 700; font-size: 18px; transition: transform 0.15s, background 0.2s;" style-hover="background: #E8A33C; color: #33241A; transform: translateY(-2px);">Join the next gathering</a>
+        <a href="#songbook" style="border: 2px solid rgba(240,222,192,0.4); color: #F0DEC0; padding: 15px 34px; border-radius: 999px; font-weight: 700; font-size: 18px; transition: border-color 0.2s;" style-hover="border-color: #E8A33C; color: #E8A33C;">Songbook Portal</a>
+      </div>
+      <div style="margin: 90px auto 0; max-width: 1240px; border-top: 1px solid rgba(240,222,192,0.18); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;">
+        <span style="font-family: 'Young Serif', serif; font-size: 20px; color: #FBF4E8;">Wildsong</span>
+        <div style="display: flex; gap: 28px; font-size: 14.5px; color: rgba(240,222,192,0.75);">
+          <a href="#offerings" style="color: rgba(240,222,192,0.75);" style-hover="color: #E8A33C;">Offerings</a>
+          <a href="#event" style="color: rgba(240,222,192,0.75);" style-hover="color: #E8A33C;">Events</a>
+          <a href="#songbook" style="color: rgba(240,222,192,0.75);" style-hover="color: #E8A33C;">Songbook</a>
+          <a href="#" style="color: rgba(240,222,192,0.75);" style-hover="color: #E8A33C;">Mangosingalong</a>
+          <a href="#" style="color: rgba(240,222,192,0.75);" style-hover="color: #E8A33C;">Contact</a>
+        </div>
+        <span style="font-size: 13.5px; color: rgba(240,222,192,0.5);">© 2026 Wildsong · sing wild, sing true</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: &quot;100%&quot;}, &quot;showMangoTeaser&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const waveSvg = React.createElement(
+      'svg',
+      { width: 320, height: 40, viewBox: '0 0 320 40', 'aria-hidden': true },
+      React.createElement('path', {
+        d: 'M0 20 Q 20 2, 40 20 T 80 20 T 120 20 T 160 20 T 200 20 T 240 20 T 280 20 T 320 20',
+        fill: 'none', stroke: '#E8A33C', strokeWidth: 3, strokeLinecap: 'round'
+      },
+        React.createElement('animate', {
+          attributeName: 'd',
+          dur: '2.4s', repeatCount: 'indefinite',
+          values: 'M0 20 Q 20 2, 40 20 T 80 20 T 120 20 T 160 20 T 200 20 T 240 20 T 280 20 T 320 20;M0 20 Q 20 38, 40 20 T 80 20 T 120 20 T 160 20 T 200 20 T 240 20 T 280 20 T 320 20;M0 20 Q 20 2, 40 20 T 80 20 T 120 20 T 160 20 T 200 20 T 240 20 T 280 20 T 320 20'
+        })
+      )
+    );
+
+    return {
+      showMangoTeaser: this.props.showMangoTeaser ?? true,
+      waveSvg,
+      offerings: [
+        { glyph: '◯', bg: '#C4552E', fg: '#FBF4E8', name: 'Song Circles', desc: 'Collaborative devotional singing — simple melodies layered into something bigger than all of us. Weekly, all voices welcome.', cta: 'Find a circle' },
+        { glyph: '♥', bg: '#7A4A2B', fg: '#FBF4E8', name: 'Cacao Connection', desc: 'Heartwarming cacao gatherings that soften the room before the first note. Warm cups, warmer company.', cta: 'Sip & sing' },
+        { glyph: '♩', bg: '#E8A33C', fg: '#33241A', name: 'Beginner Guitar', desc: 'Group lessons for absolute beginners. Three chords in, you\u2019re already accompanying the circle.', cta: 'Start strumming' },
+        { glyph: '⛺', bg: '#4A6B4E', fg: '#FBF4E8', name: 'Weekend Retreats', desc: 'A few days away in nature — song, cacao, fire, rest. Come home to yourself.', cta: 'See retreats' },
+        { glyph: '✦', bg: '#C4552E', fg: '#FBF4E8', name: 'Events & Parties', desc: 'We bring the singalong to your celebration — festivals, weddings, birthdays, and everything worth singing about.', cta: 'Book us' },
+        { glyph: '♪', bg: '#33241A', fg: '#FBF4E8', name: 'Songbook Portal', desc: 'Virtual modules with every circle song — lyrics, chords, and videos to keep the music going between gatherings.', cta: 'Enter portal' }
+      ],
+      moments: [
+        { n: '1', title: 'Arrive as you are', desc: 'No warm-ups, no auditions. A cup of cacao, a seat in the circle, a few easy hellos.' },
+        { n: '2', title: 'Learn by ear, together', desc: 'Songs are taught line by line — in minutes the whole room is carrying the melody.' },
+        { n: '3', title: 'Let it get wild', desc: 'Harmonies stack, rhythms build, someone laughs mid-verse. This is the good part.' }
+      ],
+      songs: [
+        { bg: '#C4552E', title: 'River of Light', meta: 'Circle favorite · 3 parts · easy', tag: 'new this month' },
+        { bg: '#4A6B4E', title: 'Gratitude Round', meta: 'Devotional · call & response', tag: 'crowd favorite' },
+        { bg: '#E8A33C', title: 'Wild Heart Rising', meta: 'Celebration · with guitar chords', tag: 'from retreat' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
